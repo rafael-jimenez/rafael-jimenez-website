@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Jimenez Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="#home"><h1>Rafael Jimenez</h1></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Rafael Jimenez</h2>
+                <h3>Web Developer / Web Designer.</h3> <br>
+                <h3>Bachelor’s of Computer Information Systems Student.</h3>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="photo-container">
+                    <img src="images 2.0/IMG_3836.jpeg" alt="Rafael Jimenez" class="about-photo">
+                </div>
+                <p>Hi, I'm Rafael Jimenez, a motivated and detail-oriented Computer Information Systems 
+                    student with a passion for technology and problem-solving. As a beginner developer, 
+                    I'm starting to explore various web technologies and learning how to create dynamic 
+                    and responsive web applications. I am currently pursuing a Bachelor's degree, and my 
+                    academic journey has equipped me with experience in object-oriented programming, 
+                    database management systems, data structures & algorithms, software quality assurance 
+                    & testing, networking fundamentals, web development, cybersecurity principles, business 
+                    communication, human resource management, IT project management, mathematical 
+                    problem-solving, and digital marketing strategies.<br>
+
+                    <br>This ePortfolio serves as a digital space where I can showcase my projects and 
+                    achievements, reflecting my commitment to learning and expanding my skills. Through 
+                    this platform, I aim to demonstrate my growth in coding, problem-solving, and teamwork, 
+                    while also sharing my aspirations for the future. I'm continuously striving to make a 
+                    positive impact in the tech industry and am eager to collaborate and grow as a developer. <br>
+                    
+                    <br>Feel free to explore my projects and skills, and thank you for visiting! If you're 
+                    interested in collaborating or learning more about my work, please don't hesitate to reach
+                     out..</p>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <p>Details about the services offered.</p>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <div class="formbold-main">
+                    <h2 class="formbold-form-title" style="color: #303d47;"></h2>
+                    <form id="contact-form">
+                        <input type="text" name="firstname" placeholder="First Name" class="formbold-input" required>
+                        <input type="text" name="lastname" placeholder="Last Name" class="formbold-input" required>
+                        <input type="email" name="email" placeholder="Your Email" class="formbold-input" required>
+                        <textarea name="message" placeholder="Your Message" class="formbold-input" rows="4" required></textarea>
+                        <button type="submit" class="formbold-btn">Send Message</button>
+                    </form>
+                </div>
+            
+               
+                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                <script>
+                    
+                    (function(){
+                        emailjs.init("Ibf8dH_rj4TyGGK80");  
+                    })();
+                
+                    
+                    document.getElementById("contact-form").addEventListener("submit", function(event){
+                        event.preventDefault();
+                
+                        
+                        emailjs.sendForm("service_z3zgcul", "template_8nzo9l6", this)  
+                            .then(function(response) {
+                                console.log("Email sent successfully: ", response);
+                                alert("Your message has been sent successfully!");
+                            }, function(error) {
+                                console.log("Error sending email: ", error);
+                                alert("Failed to send message. Please try again.");
+                                console.error("Error details: ", error);  
+                            });
+                    });
+                </script>
+            
+                
+                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                <script>
+                    
+                    (function(){
+                        emailjs.init("Ibf8dH_rj4TyGGK80");  
+                    })();
+                
+                    
+                    document.getElementById("contact-form").addEventListener("submit", function(event){
+                        event.preventDefault();
+                
+                        
+                        emailjs.sendForm("service_z3zgcul", "template_incd8dv", this)  
+                    });
+                </script>
+            </div>
+        </section>
+
+
+
+        <section id="resume">
+            <div class="container">
+                <h2>My Resume</h2>
+                <p>Contact details and form go here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Rafael Jimenez. All rights reserved.
+    </footer>
+</body>
+</html>
