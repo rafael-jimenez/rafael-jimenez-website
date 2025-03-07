@@ -270,8 +270,8 @@ p {
 
 .terminal-loader {
     border: 0.1em solid #333;
-    background-color: #1a1a1a;
-    color: #0f0;
+    background-color: #303d47;
+    color: rgb(255, 255, 255);
     font-family: "Courier New", Courier, monospace;
     font-size: 1em;
     padding: 1.5em 1em;
@@ -332,9 +332,22 @@ p {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.2em solid green; /* Cursor */
+    border-right: 0.2em solid rgb(212, 212, 212); /* Cursor */
     animation:
         typeAndDelete 4s steps(15) infinite,
         blinkCursor 0.5s step-end infinite alternate;
     margin-top: 1.5em;
+}
+
+
+#Work\ Experience .container {
+    max-width: 800px; /* Restrict width for better readability */
+    margin: 0 auto; /* Center align */
+}
+
+#Work\ Experience p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #303d47;
+    margin-bottom: 10px;
 }
