@@ -377,8 +377,8 @@ button:active .button_top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: clamp(60px, 12vw, 90px);
-    height: clamp(60px, 12vw, 90px);
+    width: clamp(100px, 12vw, 90px);
+    height: clamp(100px, 12vw, 90px);
     background-color: #303d47;
     color: #e0d8c2;
     border: none;
@@ -416,8 +416,8 @@ button:active .button_top {
 }
 
 .hidden-buttons button {
-    width: clamp(50px, 10vw, 80px);
-    height: clamp(50px, 10vw, 80px);
+    width: clamp(100px, 10vw, 80px);
+    height: clamp(100px, 10vw, 80px);
     border-radius: 50%;
     border: none;
     background-color: #536878;
@@ -455,8 +455,8 @@ button:active .button_top {
 }
 
 .hidden-buttons a button {
-    width: clamp(50px, 10vw, 80px);
-    height: clamp(50px, 10vw, 80px);
+    width: clamp(100px, 10vw, 80px);
+    height: clamp(100px, 10vw, 80px);
     font-size: clamp(12px, 2.5vw, 16px);
     font-weight: bold;
     overflow: hidden;
