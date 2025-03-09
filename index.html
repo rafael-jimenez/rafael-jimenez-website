@@ -9,9 +9,10 @@
 </head>
 <body>
     <header>
-        <a href="#home"><h1>Rafael Jimenez</h1></a>
-        <!-- <nav>
-            <ul>
+        <a href="#home"><h2>Rafael Jimenez</h2></a>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#Skills">Skills</a></li>
@@ -19,7 +20,7 @@
                 <li><a href="#Work-Experience">Work Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav> -->
+        </nav>
     </header>
 
     <main> 
@@ -62,6 +63,12 @@
                     buttons.classList.remove("active");
                 }
             });
+
+            // Toggle hamburger menu
+            function toggleMenu() {
+                let menu = document.getElementById("nav-menu");
+                menu.classList.toggle("active");
+            }
         </script>
 
         <section id="about">
@@ -71,12 +78,8 @@
                     <img src="images 2.0/IMG_3836.jpeg" alt="Rafael Jimenez" class="about-photo">
                 </div>
                 <div class="social-media">
-                    <a href="https://www.instagram.com/rafael_j21/" target="_blank" aria-label="Instagram" class="icon">
-                        <!-- Instagram Icon -->
-                    </a>
-                    <a href="https://www.linkedin.com/in/rafael-jimenez-57ab33334/" target="_blank" aria-label="LinkedIn" class="icon">
-                        <!-- LinkedIn Icon -->
-                    </a>
+                    <a href="https://www.instagram.com/rafael_j21/" target="_blank" aria-label="Instagram">Instagram</a>
+                    <a href="https://www.linkedin.com/in/rafael-jimenez-57ab33334/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
                 </div>
                 <p>Hi, I'm Rafael Jimenez, a motivated and detail-oriented Computer Information Systems student with a passion for technology and problem-solving. I'm currently pursuing a Bachelor's degree, and my academic journey has equipped me with experience in object-oriented programming, database management systems, data structures & algorithms, software quality assurance & testing, networking fundamentals, web development, cybersecurity principles, business communication, human resource management, IT project management, mathematical problem-solving, and digital marketing strategies.</p>
                 <p>This ePortfolio serves as a digital space where I can showcase my projects and achievements, reflecting my commitment to learning and expanding my skills. Feel free to explore my projects and skills, and thank you for visiting! If you're interested in collaborating or learning more about my work, please don't hesitate to reach out.</p>
@@ -178,7 +181,7 @@
     </main>
 
     <footer>
-        &copy; 2025 Rafael Jimenez. All rights reserved.
+        © 2025 Rafael Jimenez. All rights reserved.
     </footer>
 </body>
 </html>

@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* This enables smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +18,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Ensure main content expands to push footer down */
 main {
     flex: 1;
 }
@@ -34,20 +33,33 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 5%;
     background: #303d47;
     backdrop-filter: blur(10px);
 }
 
-/* Prevent the header link from looking like a regular link */
 header a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit; /* Inherits the color from the parent header */
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 30px;
+    color: #EAE0C8;
+    cursor: pointer;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -67,7 +79,7 @@ nav ul li a:hover {
 
 /* Sections */
 section {
-    padding: 100px 0;
+    padding: 80px 5%;
     text-align: center;
     background-color: #EAE0C8;
 }
@@ -96,16 +108,18 @@ section#home::before {
 section#home .container {
     position: relative;
     z-index: 1;
+    width: 90%;
+    max-width: 1200px;
 }
 
 section#home h2 {
-    font-size: 80px;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 section h2 {
-    font-size: 60px;
+    font-size: clamp(30px, 6vw, 60px);
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -117,40 +131,38 @@ footer {
     background: #303d47;
     color: #EAE0C8;
 }
+
 /* Paragraphs */
 p {
-    font-size: 22px;
+    font-size: clamp(16px, 2.5vw, 22px);
     line-height: 1.6;
-    color: #303d47; /* Dark text color for readability */
-    max-width: 1000px; /* Limit width for readability */
-    margin: 20px auto; /* Center align with spacing */
+    color: #303d47;
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 10px;
 }
-/* Style for the photo container */
+
+/* Photo Container */
 .photo-container {
     display: flex;
-    justify-content: center; /* Centers the image */
+    justify-content: center;
     margin-top: 20px;
 }
 
 .about-photo {
-    width: 100%;           /* Image takes up full width of its container */
-    max-width: 500px;      /* Max width to avoid image growing too large */
-    height: auto;          /* Maintains aspect ratio */
-    border-radius: 8px;    /* Optional: rounded corners for a modern look */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
 }
+
+/* Contact Form */
 .formbold-main {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;
     background-color: #EAE0C8;
-}
-
-.formbold-form-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 .formbold-input {
@@ -160,7 +172,7 @@ p {
     border-radius: 4px;
     border: 1px solid #303d47;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 .formbold-btn {
@@ -168,7 +180,7 @@ p {
     color: white;
     border: none;
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     cursor: pointer;
     border-radius: 4px;
     width: 100%;
@@ -178,67 +190,27 @@ p {
     background-color: #536878;
 }
 
-
-@media (max-width: 768px) {
-    .formbold-main {
-        padding: 20px;
-    }
-
-    .formbold-input, .formbold-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
-
+/* Social Media */
 .social-media:before {
     content: " ";
     width: 100%;
     height: 2px;
     transform: translatey(10px);
     background: #414141;
-  }
-  
-  .social-media a {
+}
+
+.social-media a {
     margin-right: 15px;
     text-decoration: none;
-    color: inherit;
-  }
-  
-  .social-media a:last-child {
-    margin-right: 0;
-  }
-  
-  .social-media a svg {
     color: #303d47;
-    transform: translatex(25px) translateY(20px);
-    width: 50px;
-    fill: currentColor;
-  }
+    font-size: 18px;
+}
 
-  /* From Uiverse.io by jeremyssocial */ 
-  @keyframes blinkCursor {
-    50% {
-      border-right-color: transparent;
-    }
-  }
-  
-  @keyframes typeAndDelete {
-    0%,
-    10% {
-      width: 0;
-    }
-    45%,
-    55% {
-      width: 8.2em;
-    } /* adjust width based on content */
-    90%,
-    100% {
-      width: 0;
-    }
-  }
+.social-media a:last-child {
+    margin-right: 0;
+}
 
- 
-
+/* Terminal Loader */
 .main-container {
     display: flex;
     justify-content: center;
@@ -252,15 +224,15 @@ p {
     background-color: #303d47;
     color: rgb(255, 255, 255);
     font-family: "Courier New", Courier, monospace;
-    font-size: 1em;
+    font-size: clamp(12px, 2vw, 16px);
     padding: 1.5em 1em;
-    width: 12em;
+    width: clamp(10em, 50vw, 12em);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    text-align: center; /* Centers content inside the terminal */
+    text-align: center;
 }
 
 .terminal-header {
@@ -311,63 +283,81 @@ p {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.2em solid rgb(212, 212, 212); /* Cursor */
+    border-right: 0.2em solid rgb(212, 212, 212);
     animation:
         typeAndDelete 4s steps(15) infinite,
         blinkCursor 0.5s step-end infinite alternate;
     margin-top: 1.5em;
 }
 
-
-#Work-Experience .container {
-    max-width: 800px;  /* Optimal readability */
-    margin: 0 auto;  /* Center align */
-    padding: 20px;  /* Added padding */
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
 }
 
+@keyframes typeAndDelete {
+    0%, 10% {
+        width: 0;
+    }
+    45%, 55% {
+        width: 8.2em;
+    }
+    90%, 100% {
+        width: 0;
+    }
+}
+
+/* Work Experience */
+#Work-Experience .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 #Work-Experience h3 {
-    font-size: 22px;
+    font-size: clamp(18px, 3vw, 22px);
     color: #1e3a5f;
     margin-top: 20px;
 }
 
 #Work-Experience h4 {
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 18px);
     color: #475569;
     font-weight: normal;
     margin-bottom: 5px;
 }
 
 #Work-Experience p {
-    font-size: 18px;
-    line-height: 1.4;  /* Reduced line spacing */
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.4;
     color: #303d47;
-    margin-bottom: 1px; /* Reduced spacing */
+    margin-bottom: 1px;
 }
 
-
-
+/* Buttons */
 .button-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    max-width: 800px;
+    max-width: 90%;
     margin: auto;
     padding: 20px;
 }
+
 button {
     --button_radius: 0.75em;
     --button_color: #e0d8c2;
     --button_outline_color: #303d47;
-    font-size: 17px;
+    font-size: clamp(14px, 2vw, 17px);
     font-weight: bold;
     border: none;
     border-radius: var(--button_radius);
     background: var(--button_outline_color);
 }
+
 .button_top {
     display: block;
     box-sizing: border-box;
@@ -379,32 +369,26 @@ button {
     transform: translateY(-0.2em);
     transition: transform 0.1s ease;
 }
+
 button:hover .button_top {
     transform: translateY(-0.33em);
 }
+
 button:active .button_top {
     transform: translateY(0);
 }
 
-
-
-
-
-
-
-/* Main floating button */
+/* Fixed Button */
 .fixed-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 12vw; /* Adjusted width for better scaling */
-    height: 12vw; /* Maintain circular shape */
-    max-width: 90px; /* Adjust max-width for smaller screens */
-    max-height: 90px; /* Adjust max-height for smaller screens */
+    width: clamp(60px, 12vw, 90px);
+    height: clamp(60px, 12vw, 90px);
     background-color: #303d47;
     color: #e0d8c2;
     border: none;
-    font-size: 2vw; /* Scales based on screen size */
+    font-size: clamp(12px, 2vw, 16px);
     font-weight: bold;
     border-radius: 50%;
     cursor: pointer;
@@ -412,64 +396,58 @@ button:active .button_top {
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;
     justify-content: center;
-    align-items: center; /* Center the text */
+    align-items: center;
     text-align: center;
     padding: 0;
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-/* Hover effect for the main button */
 .fixed-button:hover {
     background-color: #536878;
     transform: scale(1.1);
 }
 
-/* Extra button container */
+/* Hidden Buttons */
 .hidden-buttons {
     position: fixed;
-    bottom: 120px; /* Increased the distance from the main button */
+    bottom: 120px;
     right: 20px;
-    display: none;  /* Hidden by default */
+    display: none;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Style for the extra button */
 .hidden-buttons button {
-    width: 10vw; /* Adjusted for better scaling */
-    height: 10vw; /* Maintain circular shape */
-    max-width: 80px; /* Adjust max size */
-    max-height: 80px; /* Adjust max size */
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
     border-radius: 50%;
     border: none;
     background-color: #536878;
     color: white;
-    font-size: 3vw; /* Scales better on different devices */
+    font-size: clamp(12px, 2.5vw, 16px);
     font-weight: bold;
     cursor: pointer;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;
     justify-content: center;
-    align-items: center; /* Center the text */
+    align-items: center;
     text-align: center;
     padding: 0;
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-/* Hover effect for the extra button */
 .hidden-buttons button:hover {
     background-color: #536878;
     transform: scale(1.1);
 }
 
-/* Active state to show the extra button */
 .hidden-buttons.active {
     display: block;
     opacity: 1;
@@ -477,62 +455,112 @@ button:active .button_top {
     transform: translateY(0);
 }
 
-/* Styling for the anchor link within the button */
 .hidden-buttons a {
-    text-decoration: none;  /* Removes underline */
-    display: block;  /* Ensures the link is clickable */
+    text-decoration: none;
+    display: block;
 }
 
 .hidden-buttons a button {
-    width: 10vw; /* Adjusted size for consistency */
-    height: 10vw; /* Maintain circular shape */
-    max-width: 80px; /* Adjust max size */
-    max-height: 80px; /* Adjust max size */
-    font-size: 2.5vw; /* Scales well with screen size */
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
+    font-size: clamp(12px, 2.5vw, 16px);
     font-weight: bold;
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-/* Hover effect for the extra button (anchor) */
 .hidden-buttons a button:hover {
     background-color: #536878;
     transform: scale(1.1);
 }
 
-/* Media Query for larger screens */
-@media screen and (min-width: 768px) {
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    nav ul {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #303d47;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    section {
+        padding: 60px 3%;
+    }
+
+    .formbold-main {
+        padding: 20px;
+    }
+
+    .button-container {
+        gap: 8px;
+        padding: 15px;
+    }
+
     .fixed-button {
-        font-size: 1em; /* Adjust font size for tablets and laptops */
+        bottom: 15px;
+        right: 15px;
     }
 
-    .hidden-buttons button {
-        font-size: 1.2em; /* Adjust font size for extra buttons */
-    }
-
-    .hidden-buttons a button {
-        font-size: 1.2em; /* Adjust font size for extra buttons */
+    .hidden-buttons {
+        bottom: 100px;
+        right: 15px;
     }
 }
 
-/* Media Query for small screens */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+    section#home h2 {
+        font-size: clamp(30px, 8vw, 50px);
+    }
+
+    section h2 {
+        font-size: clamp(24px, 6vw, 40px);
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .fixed-button {
-        font-size: 2.5em; /* Larger font size for very small screens */
-        width: 20vw; /* Larger button for mobile */
-        height: 20vw;
+        width: clamp(50px, 15vw, 70px);
+        height: clamp(50px, 15vw, 70px);
+        font-size: clamp(10px, 3vw, 14px);
     }
 
-    .hidden-buttons button {
-        font-size: 2.5em; /* Larger font size for extra buttons */
-        width: 20vw;
-        height: 20vw;
-    }
-
+    .hidden-buttons button,
     .hidden-buttons a button {
-        font-size: 2.3em; /* Larger font size for anchor buttons */
-        width: 18vw;
-        height: 18vw;
+        width: clamp(40px, 12vw, 60px);
+        height: clamp(40px, 12vw, 60px);
+        font-size: clamp(10px, 3vw, 14px);
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
