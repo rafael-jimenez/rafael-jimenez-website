@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rafael Jimenez ePortfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="styles1.0.css" rel="stylesheet">
+    
+    <style>
+        
+        :root {
+            --top-section-height: 80vh;  
+        }
+
+        
+        .top-section {
+            background-image: url('images/IMG_1409.jpeg'); 
+            background-size: cover;  
+            background-position: center;  
+            height: var(--top-section-height);  
+            color: white;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+
+        
+        .top-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  
+        }
+
+        
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        
+        .video-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        
+        .text-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+
+        
+        .text-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .text-container p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+        }
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+
+                /* Main floating button */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 12vw; /* Adjusted width for better scaling */
+    height: 12vw; /* Maintain circular shape */
+    max-width: 90px; /* Adjust max-width for smaller screens */
+    max-height: 90px; /* Adjust max-height for smaller screens */
+    background-color: #303d47;
+    color: #ffffff;
+    border: none;
+    font-size: 2vw; /* Scales based on screen size */
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text */
+    text-align: center;
+    padding: 0;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the main button */
+.fixed-button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Extra button container */
+.hidden-buttons {
+    position: fixed;
+    bottom: 120px; /* Increased the distance from the main button */
+    right: 20px;
+    display: none;  /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Style for the extra button */
+.hidden-buttons button {
+    width: 10vw; /* Adjusted for better scaling */
+    height: 10vw; /* Maintain circular shape */
+    max-width: 80px; /* Adjust max size */
+    max-height: 80px; /* Adjust max size */
+    border-radius: 50%;
+    border: none;
+    background-color: #536878;
+    color: white;
+    font-size: 3vw; /* Scales better on different devices */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text */
+    text-align: center;
+    padding: 0;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the extra button */
+.hidden-buttons button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Active state to show the extra button */
+.hidden-buttons.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Styling for the anchor link within the button */
+.hidden-buttons a {
+    text-decoration: none;  /* Removes underline */
+    display: block;  /* Ensures the link is clickable */
+}
+
+.hidden-buttons a button {
+    width: 10vw; /* Adjusted size for consistency */
+    height: 10vw; /* Maintain circular shape */
+    max-width: 80px; /* Adjust max size */
+    max-height: 80px; /* Adjust max size */
+    font-size: 2.5vw; /* Scales well with screen size */
+    font-weight: bold;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the extra button (anchor) */
+.hidden-buttons a button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Media Query for larger screens */
+@media screen and (min-width: 768px) {
+    .fixed-button {
+        font-size: 1em; /* Adjust font size for tablets and laptops */
+    }
+
+    .hidden-buttons button {
+        font-size: 1.2em; /* Adjust font size for extra buttons */
+    }
+
+    .hidden-buttons a button {
+        font-size: 1.2em; /* Adjust font size for extra buttons */
+    }
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 480px) {
+    .fixed-button {
+        font-size: 2.5em; /* Larger font size for very small screens */
+        width: 20vw; /* Larger button for mobile */
+        height: 20vw;
+    }
+
+    .hidden-buttons button {
+        font-size: 2.5em; /* Larger font size for extra buttons */
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .hidden-buttons a button {
+        font-size: 2.3em; /* Larger font size for anchor buttons */
+        width: 18vw;
+        height: 18vw;
+    }
+}
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Rafael Jimenez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutMe.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebProjects.html">Web Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Programmingprojects.html">Programming Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Resume.html">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <button class="fixed-button" onclick="toggleButtons()">Newest <br> version</button>
+
+<div class="hidden-buttons" id="extraButtons">
+    <a class="nav-link" href="HomePage.html">
+        <button>1.5</button>
+    </a>
+</div>
+
+
+<script>
+    function toggleButtons() {
+        let buttons = document.getElementById("extraButtons");
+        buttons.classList.toggle("active");
+    }
+
+    // Optional: Close buttons when clicking outside
+    document.addEventListener("click", function(event) {
+        let button = document.querySelector(".fixed-button");
+        let buttons = document.getElementById("extraButtons");
+
+        if (!button.contains(event.target) && !buttons.contains(event.target)) {
+            buttons.classList.remove("active");
+        }
+    });
+</script>
+
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4" style="color: #5fa53f;">Programming Projects</h1>
+        <br><br><br>
+        <div class="project mb-5">
+            <h3>Federal Skilled Worker Program Eligibility Evaluator in Java</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/JavaA1.png" alt="Assignment 1 Screenshot" class="img-fluid resize-img">
+                </div>
+                <div class="col-md-6">
+                    <h4>Project Description</h4>
+<p>This project focused on developing a Java application to process and evaluate applicants for the Federal Skilled Worker Program. The goal was to apply fundamental programming concepts, including decision-making, loops, functions, and file I/O, to create an application that reads data from an input file, processes the applicants' information, and outputs a list of qualified candidates based on a simplified version of the Express Entry scoring system.</p>
+
+<h5>Key Learnings and Insights:</h5>
+<ul>
+    <li>Transformed basic Python programming constructs (such as loops, decision-making, and file handling) into Java, gaining proficiency in Java syntax and object-oriented programming concepts.</li>
+    <li>Applied modular programming by organizing code into functions to ensure better maintainability, readability, and reusability.</li>
+    <li>Gained practical experience in file I/O by reading data from a tab-separated input file and writing qualified applicants' information to an output file.</li>
+    <li>Implemented a scoring system based on multiple factors, including language skills, education, work experience, age, and adaptability, to determine applicants' eligibility for the program.</li>
+    <li>Refined debugging skills by testing the application with multiple datasets and ensuring the program handled different cases and edge conditions effectively.</li>
+</ul>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="project mb-5">
+            <h3>Casino Management System in Java</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/JavaA2.png" alt="Assignment 1 Screenshot" class="img-fluid resize-img">
+                </div>
+                <div class="col-md-6">
+                    <h4>Project Description</h4>
+<p>This project focused on developing a Java application for the Punto Banco casino game, incorporating features such as player management, balance tracking, and game statistics. The goal was to apply object-oriented programming principles to implement the game's rules, handle player data, and allow users to play, place bets, and view player rankings. The application also involves storing player data in a file and providing reports on top players and individual player information.</p>
+
+<h5>Key Learnings and Insights:</h5>
+<ul>
+    <li>Enhanced object-oriented programming skills by creating classes for cards, players, and decks, and implementing core game mechanics for Punto Banco.</li>
+    <li>Gained experience in data persistence by implementing file I/O to store and retrieve player information, including balances and wins, from a text file.</li>
+    <li>Developed a robust menu system with user input validation, allowing for smooth navigation and interaction with the game.</li>
+    <li>Implemented game logic for Blackjack, handling player bets, card dealing, and determining the outcome based on game rules, including blackjack and dealer strategies.</li>
+    <li>Applied JUnit testing to validate the correctness of key components, such as card creation, hand evaluation, and deck shuffling, ensuring reliable gameplay.</li>
+    <li>Refined debugging skills by testing the application with various datasets and ensuring the game logic and player management worked correctly in all cases.</li>
+</ul>
+</div>
+</div>
+<br><br><br>
+        <div class="project mb-5">
+            <h3>Toy Store Inventory Management System in Java</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/ToyA3.png" alt="Assignment 1 Screenshot" class="img-fluid resize-img">
+                </div>
+                <div class="col-md-6">
+                    <h4>Project Description</h4>
+<p>This project focused on developing a Java-based inventory management system for a toy store, enabling users to find, purchase, and manage toys within the store's database. The application was designed using object-oriented principles such as inheritance, abstraction, and interfaces to handle different types of toys and their specific attributes. The system includes functionality to search for toys, add or remove toys, and make gift suggestions based on user input, while ensuring that data is stored and retrieved efficiently using file I/O.</p>
+
+<h5>Key Learnings and Insights:</h5>
+<ul>
+    <li>Enhanced understanding of object-oriented programming by utilizing inheritance to create specialized classes for each toy type while maintaining shared attributes in a superclass.</li>
+    <li>Applied file handling techniques for storing and retrieving toy data from a text file, ensuring data persistence and integrity across application sessions.</li>
+    <li>Developed a user-friendly interface with input validation, enabling customers to search for toys, purchase items, and manage the inventory with ease.</li>
+    <li>Implemented a toy suggestion feature, allowing users to receive gift recommendations based on age, type, or price range, enhancing the user experience.</li>
+    <li>Refined debugging and testing skills by ensuring that the system correctly handled edge cases such as invalid inputs, stock limitations, and unique serial numbers.</li>
+    <li>Strengthened knowledge of abstract classes and interfaces to define common behaviors for different toy types, while providing flexibility in their implementation.</li>
+</ul>
+</div>
+</div>
+
+
+    <div class="social-media">
+    <a href="https://www.linkedin.com/in/rafael-jimenez-57ab33334/" target="_blank">
+        <img src="images/linkeding logo.png" alt="LinkedIn" class="social-icon">
+    </a>
+    <a href="https://www.instagram.com/rafael_j21/" target="_blank">
+        <img src="images/instagram-gris.png" alt="Instagram" class="social-icon">
+    </a>
+    </div>
+
+
+
+    <div class="contact-info">
+        <p>Email: <a href="mailto:rafaelji1306@gmail.com">rafaelji1306@gmail.com</a></p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Rafael Jimenez. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

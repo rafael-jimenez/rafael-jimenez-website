@@ -14,9 +14,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#Work Experience">Work Experience</a></li>
-                <li><a href="#Skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -27,9 +27,53 @@
             <div class="container">
                 <h2>Rafael Jimenez</h2>
                 <h3>Web Developer | Web Designer | Mobile Developer</h3> <br>
-                <h3>Bachelor’s of Computer Information Systems Student.</h3>
+                <h3>Bachelor’s of Computer Information Systems Student</h3>
+                <br>
+                <div class="button-container">
+                    <a href="#Skills"><button><span class="button_top">Skills</span></button></a>
+                    <a href="#contact"><button><span class="button_top">Get in touch</span></button></a>
+                </div>
             </div>
         </section>
+
+
+
+
+        <button class="fixed-button" onclick="toggleButtons()">Past <br> versions</button>
+
+<div class="hidden-buttons" id="extraButtons">
+    <a class="nav-link" href="index.html">
+        <button>1.0</button>
+    </a>
+</div>
+
+
+<script>
+    function toggleButtons() {
+        let buttons = document.getElementById("extraButtons");
+        buttons.classList.toggle("active");
+    }
+
+    // Optional: Close buttons when clicking outside
+    document.addEventListener("click", function(event) {
+        let button = document.querySelector(".fixed-button");
+        let buttons = document.getElementById("extraButtons");
+
+        if (!button.contains(event.target) && !buttons.contains(event.target)) {
+            buttons.classList.remove("active");
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
 
         <section id="about">
             <div class="container">
@@ -74,6 +118,34 @@
 
 
 
+        <section id="Skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="button-container">
+                    <button><span class="button_top">HTML</span></button>
+                    <button><span class="button_top">CSS</span></button>
+                    <button><span class="button_top">JavaScript</span></button>
+                    <button><span class="button_top">Node.js</span></button>
+                    <button><span class="button_top">React.js</span></button>
+                    <button><span class="button_top">PostgreSQL</span></button>
+                    <button><span class="button_top">SQL</span></button>
+                    <button><span class="button_top">Java</span></button>
+                    <button><span class="button_top">Python</span></button>
+                    <button><span class="button_top">Web3</span></button>
+                    <button><span class="button_top">Bootstrap</span></button>
+                    <button><span class="button_top">DOM</span></button>
+                    <button><span class="button_top">GitHub</span></button>
+                    <button><span class="button_top">Git</span></button>
+                    <button><span class="button_top">Version Control</span></button>
+                    <button><span class="button_top">Bilingual (English/Spanish)</span></button>
+                </div>
+        </section>
+
+
+
+
+
+
 
 
 
@@ -113,49 +185,34 @@
         
 
 
-        <section id="Work Experience">
+        <section id="Work-Experience">
             <div class="container">
-                <h2>Work Experience</h2>
-                <h3>Web Developer / Web Designer</h3>
-                <h4>Hivefficient</h4>
-                <h4>(2024 - present)</h4>
-                <p>- Designed, developed, 
-                    and maintained responsive websites, 
-                    optimizing for both mobile and desktop compatibility.</p>
-
-                <p>- Collaborated with clients to customize site features, 
-                    enhance functionality, and improve user experience.</p>
-
-                <h3>Sales Associate</h3>
-                <h4>Staples Canada - Cochrane, AB</h4>
-                <h4>(2021 – Present)</h4>
-                <p></p>
-        </section>
-
-
-
-        <section id="Skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="button-container">
-                    <button><span class="button_top">HTML</span></button>
-                    <button><span class="button_top">CSS</span></button>
-                    <button><span class="button_top">JavaScript</span></button>
-                    <button><span class="button_top">Node.js</span></button>
-                    <button><span class="button_top">React.js</span></button>
-                    <button><span class="button_top">PostgreSQL</span></button>
-                    <button><span class="button_top">SQL</span></button>
-                    <button><span class="button_top">Java</span></button>
-                    <button><span class="button_top">Python</span></button>
-                    <button><span class="button_top">Web3</span></button>
-                    <button><span class="button_top">Bootstrap</span></button>
-                    <button><span class="button_top">DOM</span></button>
-                    <button><span class="button_top">GitHub</span></button>
-                    <button><span class="button_top">Git</span></button>
-                    <button><span class="button_top">Version Control</span></button>
-                    <button><span class="button_top">Bilingual (English/Spanish)</span></button>
+                <h2>Work Experience</h2><br>
+        
+                <div class="job">
+                    <h3>Web Developer / Web Designer</h3>
+                    <h4>Hivefficient</h4>
+                    <h4>(2024 - Present)</h4>
+                    <p>• Designed, developed, and maintained responsive websites, ensuring seamless mobile and desktop experiences.</p>
+                    <p>• Collaborated with clients to customize site features, enhance functionality, and improve user experience.</p>
+                <br><br>
                 </div>
+        
+                <div class="job">
+                    <h3>Sales Associate</h3>
+                    <h4>Staples Canada - Cochrane, AB</h4>
+                    <h4>(2021 – Present)</h4>
+                    <p>• Assisted customers with sales and printing services, ensuring high satisfactio.</p>
+                    <p>• Managed inventory and store organization to ensure a seamless shopping experience.</p>
+                    
+                </div>
+            </div>
         </section>
+        
+
+
+
+        
 
 
 

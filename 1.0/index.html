@@ -96,6 +96,152 @@
             margin-bottom: 5px;
             margin-top: 0px;
         }
+
+        /* Main floating button */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 12vw; /* Adjusted width for better scaling */
+    height: 12vw; /* Maintain circular shape */
+    max-width: 90px; /* Adjust max-width for smaller screens */
+    max-height: 90px; /* Adjust max-height for smaller screens */
+    background-color: #303d47;
+    color: #e0d8c2;
+    border: none;
+    font-size: 2vw; /* Scales based on screen size */
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text */
+    text-align: center;
+    padding: 0;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the main button */
+.fixed-button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Extra button container */
+.hidden-buttons {
+    position: fixed;
+    bottom: 120px; /* Increased the distance from the main button */
+    right: 20px;
+    display: none;  /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Style for the extra button */
+.hidden-buttons button {
+    width: 10vw; /* Adjusted for better scaling */
+    height: 10vw; /* Maintain circular shape */
+    max-width: 80px; /* Adjust max size */
+    max-height: 80px; /* Adjust max size */
+    border-radius: 50%;
+    border: none;
+    background-color: #536878;
+    color: white;
+    font-size: 3vw; /* Scales better on different devices */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text */
+    text-align: center;
+    padding: 0;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the extra button */
+.hidden-buttons button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Active state to show the extra button */
+.hidden-buttons.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Styling for the anchor link within the button */
+.hidden-buttons a {
+    text-decoration: none;  /* Removes underline */
+    display: block;  /* Ensures the link is clickable */
+}
+
+.hidden-buttons a button {
+    width: 10vw; /* Adjusted size for consistency */
+    height: 10vw; /* Maintain circular shape */
+    max-width: 80px; /* Adjust max size */
+    max-height: 80px; /* Adjust max size */
+    font-size: 2.5vw; /* Scales well with screen size */
+    font-weight: bold;
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Hover effect for the extra button (anchor) */
+.hidden-buttons a button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Media Query for larger screens */
+@media screen and (min-width: 768px) {
+    .fixed-button {
+        font-size: 1em; /* Adjust font size for tablets and laptops */
+    }
+
+    .hidden-buttons button {
+        font-size: 1.2em; /* Adjust font size for extra buttons */
+    }
+
+    .hidden-buttons a button {
+        font-size: 1.2em; /* Adjust font size for extra buttons */
+    }
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 480px) {
+    .fixed-button {
+        font-size: 2.5em; /* Larger font size for very small screens */
+        width: 20vw; /* Larger button for mobile */
+        height: 20vw;
+    }
+
+    .hidden-buttons button {
+        font-size: 2.5em; /* Larger font size for extra buttons */
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .hidden-buttons a button {
+        font-size: 2.3em; /* Larger font size for anchor buttons */
+        width: 18vw;
+        height: 18vw;
+    }
+}
+
     </style>
 </head>
 <body class="bg-light">
@@ -145,6 +291,35 @@
         <img src="images/instagram-gris.png" alt="Instagram" class="social-icon">
     </a>
     </div>
+
+
+    <button class="fixed-button" onclick="toggleButtons()">Newest <br> version</button>
+
+<div class="hidden-buttons" id="extraButtons">
+    <a class="nav-link" href="">
+        <button>1.5</button>
+    </a>
+</div>
+
+
+<script>
+    function toggleButtons() {
+        let buttons = document.getElementById("extraButtons");
+        buttons.classList.toggle("active");
+    }
+
+    // Optional: Close buttons when clicking outside
+    document.addEventListener("click", function(event) {
+        let button = document.querySelector(".fixed-button");
+        let buttons = document.getElementById("extraButtons");
+
+        if (!button.contains(event.target) && !buttons.contains(event.target)) {
+            buttons.classList.remove("active");
+        }
+    });
+</script>
+
+
 
 
     
