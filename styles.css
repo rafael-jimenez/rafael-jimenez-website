@@ -538,15 +538,15 @@ button:active .button_top {
     }
 
     .fixed-button {
-        width: clamp(50px, 15vw, 70px);
-        height: clamp(50px, 15vw, 70px);
+        width: clamp(60px, 15vw, 70px);
+        height: clamp(60px, 15vw, 70px);
         font-size: clamp(10px, 3vw, 14px);
     }
 
     .hidden-buttons button,
     .hidden-buttons a button {
-        width: clamp(40px, 12vw, 60px);
-        height: clamp(40px, 12vw, 60px);
+        width: clamp(60px, 12vw, 60px);
+        height: clamp(60px, 12vw, 60px);
         font-size: clamp(10px, 3vw, 14px);
     }
 }
