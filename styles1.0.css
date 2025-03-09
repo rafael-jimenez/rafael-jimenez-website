@@ -186,3 +186,127 @@ video {
     max-width: 100%;
     height: auto;
 }
+/* Fixed "Past Versions" Button */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: clamp(60px, 12vw, 90px);
+    height: clamp(60px, 12vw, 90px);
+    background-color: #303d47;
+    color: #e0d8c2;
+    border: none;
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fixed-button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Hidden "1.0" Button Container */
+.hidden-buttons {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden-buttons button {
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
+    border-radius: 50%;
+    border: none;
+    background-color: #536878;
+    color: white;
+    font-size: clamp(12px, 2.5vw, 16px);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hidden-buttons button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+.hidden-buttons.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hidden-buttons a {
+    text-decoration: none;
+    display: block;
+}
+
+.hidden-buttons a button {
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
+    font-size: clamp(12px, 2.5vw, 16px);
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hidden-buttons a button:hover {
+    background-color: #536878;
+    transform: scale(1.1);
+}
+
+/* Media Queries Affecting These Buttons */
+@media (max-width: 768px) {
+    .fixed-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .hidden-buttons {
+        bottom: 100px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fixed-button {
+        width: clamp(50px, 15vw, 70px);
+        height: clamp(50px, 15vw, 70px);
+        font-size: clamp(10px, 3vw, 14px);
+    }
+
+    .hidden-buttons button,
+    .hidden-buttons a button {
+        width: clamp(40px, 12vw, 60px);
+        height: clamp(40px, 12vw, 60px);
+        font-size: clamp(10px, 3vw, 14px);
+    }
+}

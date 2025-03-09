@@ -277,22 +277,24 @@
     </nav>
 
 
-    <button class="fixed-button" onclick="toggleButtons()">Newest <br> version</button>
+    <!-- Fixed "Past Versions" Button -->
+<button class="fixed-button" onclick="toggleButtons()">Newest <br> versions</button>
 
+<!-- Hidden "1.0" Button Container -->
 <div class="hidden-buttons" id="extraButtons">
     <a class="nav-link" href="index.html">
         <button>1.5</button>
     </a>
 </div>
 
-
+<!-- JavaScript for Toggling -->
 <script>
     function toggleButtons() {
         let buttons = document.getElementById("extraButtons");
         buttons.classList.toggle("active");
     }
 
-    // Optional: Close buttons when clicking outside
+    // Close buttons when clicking outside
     document.addEventListener("click", function(event) {
         let button = document.querySelector(".fixed-button");
         let buttons = document.getElementById("extraButtons");
