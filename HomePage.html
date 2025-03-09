@@ -16,7 +16,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#Skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#Work Experience">Work Experience</a></li>
+                <li><a href="#Work-Experience">Work Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -26,9 +26,8 @@
         <section id="home" class="hero">
             <div class="container">
                 <h2>Rafael Jimenez</h2>
-                <h3>Web Developer | Web Designer | Mobile Developer</h3> <br>
+                <h3>Web Developer | Web Designer | Mobile Developer</h3>
                 <h3>Bachelor’s of Computer Information Systems Student</h3>
-                <br>
                 <div class="button-container">
                     <a href="#Skills"><button><span class="button_top">Skills</span></button></a>
                     <a href="#contact"><button><span class="button_top">Get in touch</span></button></a>
@@ -36,44 +35,30 @@
             </div>
         </section>
 
-
-
-
         <button class="fixed-button" onclick="toggleButtons()">Past <br> versions</button>
 
-<div class="hidden-buttons" id="extraButtons">
-    <a class="nav-link" href="index.html">
-        <button>1.0</button>
-    </a>
-</div>
+        <div class="hidden-buttons" id="extraButtons">
+            <a class="nav-link" href="index.html">
+                <button>1.0</button>
+            </a>
+        </div>
 
+        <script>
+            function toggleButtons() {
+                let buttons = document.getElementById("extraButtons");
+                buttons.classList.toggle("active");
+            }
 
-<script>
-    function toggleButtons() {
-        let buttons = document.getElementById("extraButtons");
-        buttons.classList.toggle("active");
-    }
+            // Close buttons when clicking outside
+            document.addEventListener("click", function(event) {
+                let button = document.querySelector(".fixed-button");
+                let buttons = document.getElementById("extraButtons");
 
-    // Optional: Close buttons when clicking outside
-    document.addEventListener("click", function(event) {
-        let button = document.querySelector(".fixed-button");
-        let buttons = document.getElementById("extraButtons");
-
-        if (!button.contains(event.target) && !buttons.contains(event.target)) {
-            buttons.classList.remove("active");
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
+                if (!button.contains(event.target) && !buttons.contains(event.target)) {
+                    buttons.classList.remove("active");
+                }
+            });
+        </script>
 
         <section id="about">
             <div class="container">
@@ -83,40 +68,16 @@
                 </div>
                 <div class="social-media">
                     <a href="https://www.instagram.com/rafael_j21/" target="_blank" aria-label="Instagram" class="icon">
-                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                        </svg>
+                        <!-- Instagram Icon -->
                     </a>
-                
                     <a href="https://www.linkedin.com/in/rafael-jimenez-57ab33334/" target="_blank" aria-label="LinkedIn" class="icon">
-                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                        </svg>
+                        <!-- LinkedIn Icon -->
                     </a>
                 </div>
-                <p>Hi, I'm Rafael Jimenez, a motivated and detail-oriented Computer Information Systems 
-                    student with a passion for technology and problem-solving. As a beginner developer, 
-                    I'm starting to explore various web technologies and learning how to create dynamic 
-                    and responsive web applications. I am currently pursuing a Bachelor's degree, and my 
-                    academic journey has equipped me with experience in object-oriented programming, 
-                    database management systems, data structures & algorithms, software quality assurance 
-                    & testing, networking fundamentals, web development, cybersecurity principles, business 
-                    communication, human resource management, IT project management, mathematical 
-                    problem-solving, and digital marketing strategies.<br>
-
-                    <br>This ePortfolio serves as a digital space where I can showcase my projects and 
-                    achievements, reflecting my commitment to learning and expanding my skills. Through 
-                    this platform, I aim to demonstrate my growth in coding, problem-solving, and teamwork, 
-                    while also sharing my aspirations for the future. I'm continuously striving to make a 
-                    positive impact in the tech industry and am eager to collaborate and grow as a developer. <br>
-                    
-                    <br>Feel free to explore my projects and skills, and thank you for visiting! If you're 
-                    interested in collaborating or learning more about my work, please don't hesitate to reach
-                     out..</p>
+                <p>Hi, I'm Rafael Jimenez, a motivated and detail-oriented Computer Information Systems student with a passion for technology and problem-solving. I'm currently pursuing a Bachelor's degree, and my academic journey has equipped me with experience in object-oriented programming, database management systems, data structures & algorithms, software quality assurance & testing, networking fundamentals, web development, cybersecurity principles, business communication, human resource management, IT project management, mathematical problem-solving, and digital marketing strategies.</p>
+                <p>This ePortfolio serves as a digital space where I can showcase my projects and achievements, reflecting my commitment to learning and expanding my skills. Feel free to explore my projects and skills, and thank you for visiting! If you're interested in collaborating or learning more about my work, please don't hesitate to reach out.</p>
             </div>
         </section>
-
-
 
         <section id="Skills">
             <div class="container">
@@ -139,20 +100,12 @@
                     <button><span class="button_top">Version Control</span></button>
                     <button><span class="button_top">Bilingual (English/Spanish)</span></button>
                 </div>
+            </div>
         </section>
-
-
-
-
-
-
-
-
 
         <section id="projects">
             <div class="container">
-                <h2>Projects</h2> <br><br>
-                <!-- From Uiverse.io by jeremyssocial --> 
+                <h2>Projects</h2>
                 <div class="main-container">
                     <div class="terminal-loader">
                         <div class="terminal-header">
@@ -166,66 +119,33 @@
                         <div class="text">Coming Soon...</div>
                     </div>
                 </div>
+            </div>
         </section>
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-        
-
 
         <section id="Work-Experience">
             <div class="container">
-                <h2>Work Experience</h2><br>
-        
+                <h2>Work Experience</h2>
                 <div class="job">
                     <h3>Web Developer / Web Designer</h3>
                     <h4>Hivefficient</h4>
                     <h4>(2024 - Present)</h4>
                     <p>• Designed, developed, and maintained responsive websites, ensuring seamless mobile and desktop experiences.</p>
                     <p>• Collaborated with clients to customize site features, enhance functionality, and improve user experience.</p>
-                <br><br>
                 </div>
-        
                 <div class="job">
                     <h3>Sales Associate</h3>
                     <h4>Staples Canada - Cochrane, AB</h4>
                     <h4>(2021 – Present)</h4>
-                    <p>• Assisted customers with sales and printing services, ensuring high satisfactio.</p>
+                    <p>• Assisted customers with sales and printing services, ensuring high satisfaction.</p>
                     <p>• Managed inventory and store organization to ensure a seamless shopping experience.</p>
-                    
                 </div>
             </div>
         </section>
-        
-
-
-
-        
-
-
-
-
-
-
-
 
         <section id="contact">
             <div class="container">
                 <h2>Contact Me</h2>
                 <div class="formbold-main">
-                    <h2 class="formbold-form-title" style="color: #303d47;"></h2>
                     <form id="contact-form">
                         <input type="text" name="firstname" placeholder="First Name" class="formbold-input" required>
                         <input type="text" name="lastname" placeholder="Last Name" class="formbold-input" required>
@@ -234,64 +154,27 @@
                         <button type="submit" class="formbold-btn">Send Message</button>
                     </form>
                 </div>
-            
-               
                 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
                 <script>
-                    
                     (function(){
-                        emailjs.init("Ibf8dH_rj4TyGGK80");  
+                        emailjs.init("Ibf8dH_rj4TyGGK80");
                     })();
-                
-                    
                     document.getElementById("contact-form").addEventListener("submit", function(event){
                         event.preventDefault();
-                
-                        
-                        emailjs.sendForm("service_z3zgcul", "template_8nzo9l6", this)  
+                        emailjs.sendForm("service_z3zgcul", "template_8nzo9l6", this)
                             .then(function(response) {
-                                console.log("Email sent successfully: ", response);
                                 alert("Your message has been sent successfully!");
                             }, function(error) {
-                                console.log("Error sending email: ", error);
                                 alert("Failed to send message. Please try again.");
-                                console.error("Error details: ", error);  
                             });
-                    });
-                </script>
-            
-                
-                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-                <script>
-                    
-                    (function(){
-                        emailjs.init("Ibf8dH_rj4TyGGK80");  
-                    })();
-                
-                    
-                    document.getElementById("contact-form").addEventListener("submit", function(event){
-                        event.preventDefault();
-                
-                        
-                        emailjs.sendForm("service_z3zgcul", "template_incd8dv", this)  
                     });
                 </script>
             </div>
         </section>
-
-
-
-
-
-
-
-
-        
     </main>
 
     <footer>
         &copy; 2025 Rafael Jimenez. All rights reserved.
-        
     </footer>
 </body>
 </html>
