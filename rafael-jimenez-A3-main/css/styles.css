@@ -1,0 +1,518 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* This adds a little space so the menu doesn't cover your titles */
+section {
+    scroll-margin-top: 80px; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #EAE0C8;
+    color: #303d47;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    color: #EAE0C8;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #303d47;
+}
+
+/* Hide hamburger by default (desktop) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #EAE0C8;
+    cursor: pointer;
+}
+
+
+
+    /* Show menu when active class is added via JS */
+    nav ul.active {
+        display: flex;
+    }
+
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 80px;
+}
+
+nav ul li a {
+    color: #EAE0C8;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #536878;
+}
+
+nav ul li a.active {
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* This applies to EVERYTHING EXCEPT the home section */
+section:not(#home) {
+    padding: 40px 5%; 
+    text-align: center;
+    background-color: #EAE0C8;
+    scroll-margin-top: 85px; 
+}
+
+/* This keeps your Home section exactly how it was */
+#home {
+    padding: 60px 5%;
+    padding-top: 120px;
+    text-align: center;
+    background-color: #EAE0C8;
+    min-height: 80vh; /* Optional: keeps the hero tall on big screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section h2 {
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #303d47;
+    color: #EAE0C8;
+}
+
+/* Paragraphs */
+p {
+    font-size: clamp(16px, 2.5vw, 22px);
+    line-height: 1.6;
+    color: #303d47;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Photo Container */
+.photo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.social-media a {
+    text-decoration: none;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+button {
+    font-size: clamp(14px, 2vw, 17px);
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: 2px solid #303d47;
+    background-color: #e0d8c2;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d6cfb9;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+#resume h2 {
+    margin-bottom: 30px;
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    margin: 0 auto 30px auto;
+    border: 2px solid #303d47;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+}
+
+.pdf-container embed {
+    width: 100%;
+    height: 100%;
+}
+
+/* Resume descriptive text */
+.resume-text {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Download button */
+.resume-download-btn {
+    display: inline-block;
+    background-color: #303d47;
+    color: #EAE0C8;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resume-download-btn:hover {
+    background-color: #536878;
+}
+
+/* Responsive PDF box */
+@media (max-width: 768px) {
+    .pdf-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-container {
+        height: 300px;
+    }
+}
+/* Video + Transcript layout */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.video-container video {
+    width: 90%;
+    height: 80%;
+    max-width: 500px;
+    border: 3px solid #303d47;
+    border-radius: 8px;
+}
+
+.text-container {
+    max-width: 600px;
+    text-align: left;
+    padding: 10px;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label, 
+.contact-form legend {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #303d47;
+}
+
+fieldset {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #303d47;
+    border-radius: 5px;
+}
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    width: 300px;
+    background: #f7f2e9;
+    border: 2px solid #303d47;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #303d47;
+    padding: 15px;
+}
+
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #303d47;
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    background-color: #e5dfd4;
+}
+
+
+
+/* CSS for Work Experience Section */
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    font-size: 1.5rem;
+    color: #303d47;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.job h4 {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.job h5 {
+    font-size: 1.1rem;
+    color: #303d47;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.job p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #303d47;
+    margin: 5px 0;
+}
+
+/* Horizontal Rule Styling */
+.job-separator {
+    border: 10;
+    height: 1px;
+    margin: 40px 0;
+}
+
+/* Responsive spacing for mobile */
+@media (max-width: 768px) {
+    .job-separator {
+        margin: 30px 0;
+    }
+}
+
+
+
+/* Contact Section Styling */
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Primary Action Button */
+.email-button {
+    display: inline-block;
+    background-color: #303d47;
+    color: #EAE0C8;
+    padding: 18px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #303d47;
+}
+
+.email-button:hover {
+    background-color: transparent;
+    color: #303d47;
+}
+
+/* Professional Detail Blocks */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #303d47;
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    color: #303d47;
+}
+
+
+
+
+
+.top-container {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #EAE0C8; /* Matches your background */
+}
+
+.simple-top-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #303d47;
+    border: 2px solid #303d47;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.simple-top-btn:hover {
+    background-color: #303d47;
+    color: #EAE0C8;
+}
+
+
+
+/* 1. THE FIXED HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    height: 85px; /* Forced height so we know where it ends */
+    top: 0;
+    left: 0;
+    background: #303d47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; /* Removed vertical padding so height controls it */
+    z-index: 1001; 
+}
+
+/* 2. THE CLEAN MOBILE MENU */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 85px; /* Matches the header height exactly */
+        left: 0;
+        width: 100%;
+        background: #303d47;
+        padding: 20px 0;
+        z-index: 1000;
+        text-align: center;
+        border-top: 1px solid rgba(234, 224, 200, 0.2);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 15px 0;
+    }
+}
+
+.hamburger {
+    transition: all 0.3s ease;
+    /* ... keep your other hamburger styles ... */
+}
+/* This adds a "buffer" so content doesn't hide behind the header */
+main {
+    padding-top: 85px; /* This matches your header height exactly */
+}

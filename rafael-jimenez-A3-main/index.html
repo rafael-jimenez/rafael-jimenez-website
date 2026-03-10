@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Rafael Jiménez</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+        <a href="#home"><h1>Rafael Jiménez</h1></a>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#Work-Experience">Work Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main> 
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Rafael Jiménez</h2>
+                <h3>Full-Stack Developer | Software Engineering | Web Developer & Designer | Sales Associate</h3>
+                <br>
+                <h3>Bachelor of Computer Information Systems Student</h3>
+                <br><br>
+                <div class="button-container">
+                    <a href="#about"><button><span class="button_top">About Me</span></button></a>
+                    <a href="#projects"><button><span class="button_top">Projects</span></button></a>
+                    <a href="#Work-Experience"><button><span class="button_top">Work Experience</span></button></a>
+                    <a href="#contact"><button><span class="button_top">Get in touch</span></button></a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+           function toggleMenu() {
+    let menu = document.getElementById("nav-menu");
+    let hamburger = document.querySelector(".hamburger");
+    
+    menu.classList.toggle("active");
+    
+    // This swaps the symbol
+    if (menu.classList.contains("active")) {
+        hamburger.innerHTML = "✕"; // The "X" symbol
+    } else {
+        hamburger.innerHTML = "☰"; // The hamburger symbol
+    }
+}
+
+document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        let menu = document.getElementById("nav-menu");
+        let hamburger = document.querySelector(".hamburger");
+        
+        menu.classList.remove("active");
+        hamburger.innerHTML = "☰"; // Resets the icon when a link is clicked
+    });
+});
+        </script>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="photo-container">
+                    <img src="images/IMG_3836.jpeg" alt="Rafael Jiménez photo" class="about-photo">
+                </div>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/rafael-jimenez5/" target="_blank" aria-label="LinkedIn">
+                        <button><span class="button_top">LinkedIn</span></button>
+                    </a>
+                </div>
+                <p> Hey, I'm <strong>Rafael Jiménez</strong>, a Computer Information Systems student with hands-on experience in full-stack web development and software engineering. 
+                    Currently pursuing my Bachelor's degree at Mount Royal University with an expected graduation in April 2027, I specialize in designing and developing responsive, database-driven applications using Python, Java, JavaScript, PHP, SQL, HTML, and CSS.
+                </p> 
+                <p> I have professional experience as a Freelance Web Developer and Designer for <strong>Kind Care</strong> and <strong>Hivefficient</strong>, where I have designed responsive websites, managed code through GitHub, and conducted performance tests to improve speed and accessibility. 
+                    In addition to my development work, my role at Staples has equipped me with strong skills in technical troubleshooting, product setup, and delivering clear technical solutions to customers.
+                </p>
+                <p> I am a <strong>bilingual</strong> professional, fluent in English and Spanish, with a strong foundation in object-oriented programming and collaborative development. 
+                    My project work includes building a dynamic <strong>Stock Portfolio & Historical Data Browser</strong> using PHP and SQLite, an <strong>Immigration Eligibility Evaluator</strong> using Java and Python, and <strong>Inventory Management Systems</strong>. 
+                    I am currently sharpening my skills through a Full-Stack Web Development Bootcamp, completing 16+ projects using modern tools like Node.js, React, and PostgreSQL.
+                </p>
+            </div>
+        </section>
+
+        <section id="Skills">
+            <div class="container">
+        <h2>Skills</h2>
+
+        <p>
+            Throughout my Computer Information Systems degree, I have gained a strong foundation 
+            in programming, web development, database management, and problem-solving.  
+            These skills reflect both course projects and personal practice as I work toward 
+            becoming a software engineer and full-stack developer.
+        </p>
+
+        <p>
+            My goal is to continue improving these skills through hands-on projects, internships, 
+            and real-world experience. Below is a list of the technologies and tools I feel 
+            comfortable using and continue to learn.
+        </p>
+        <br><br>
+        <h3>Languages</h3>
+<div class="button-container">
+    <button><span class="button_top">HTML</span></button>
+    <button><span class="button_top">CSS</span></button>
+    <button><span class="button_top">Python</span></button>
+    <button><span class="button_top">Java</span></button>
+    <button><span class="button_top">JavaScript</span></button>
+    <button><span class="button_top">PHP</span></button>
+    <button><span class="button_top">SQL (PostgreSQL, SQLite)</span></button>
+</div>
+<br>
+<h3>Systems, Tools, Frameworks & Libraries</h3>
+<div class="button-container">
+    <button><span class="button_top">Linux</span></button>
+    <button><span class="button_top">Git / GitHub</span></button>
+    <button><span class="button_top">Version Control</span></button>
+    <button><span class="button_top">Node.js</span></button>
+    <button><span class="button_top">React</span></button>
+    <button><span class="button_top">XAMPP</span></button>
+    <button><span class="button_top">PDO</span></button>
+    <button><span class="button_top">VS Code</span></button>
+    <button><span class="button_top">Eclipse</span></button>
+    <button><span class="button_top">Responsive Design</span></button>
+</div>
+<br>
+<h3>Design & Productivity</h3>
+<div class="button-container">
+    <button><span class="button_top">Adobe Creative Suite</span></button>
+    <button><span class="button_top">Photoshop</span></button>
+    <button><span class="button_top">Illustrator</span></button>
+    <button><span class="button_top">Premiere Pro</span></button>
+    <button><span class="button_top">Microsoft 365</span></button>
+    <button><span class="button_top">Bilingual (English/Spanish)</span></button>
+</div>
+    </div>
+</section>
+
+        <section id="projects">
+            <div class="container">
+        <h2>Projects</h2>
+        <p>Explore my development work, including web development, design, and programming projects.  
+           Click any project to view full details, screenshots, reflections, and technologies used.</p>
+
+        <br><br>
+
+        <!-- PROJECT GRID -->
+        <div class="project-grid">
+
+            <!-- CARD 1 -->
+            <a href="project-kindcare.html" class="project-card">
+                <img src="images/KCmainpage.png" alt="KindCare Preview">
+                <h3>KindCare – Web Development</h3>
+                <p>HTML • CSS • JavaScript</p>
+            </a>
+
+            <!-- CARD 2 -->
+            <a href="project-hivefficient.html" class="project-card">
+                <img src="images/hivefficientlinkedin.png" alt="Hivefficient Preview">
+                <h3>Hivefficient – Client Website</h3>
+                <p>HTML • CSS</p>
+            </a>
+
+            <!-- CARD 3 -->
+            <a href="project-school.html" class="project-card">
+                <img src="images/pythonandjava.png" alt="Java Projects Preview">
+                <h3>Java and Python Programming Projects</h3>
+                <p>Java • Python • File I/O • OOP</p>
+            </a>
+
+            <!-- CARD 4 -->
+            <a href="project-stock.html" class="project-card">
+                <img src="images/php-sql.jpg" alt="Stock Portfolio & Historical Data Browser Preview">
+                <h3>Stock Portfolio & Historical Data Browser</h3>
+                <p>PHP • PDO • SQLite • SQL • CSS</p>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+        <section id="Work-Experience">
+    <div class="container">
+        <h2>Work Experience</h2>
+        <br><br>
+
+        <div class="job">
+            <h3>Web Developer / Web Designer</h3>
+            <br>
+            <h3>Kind Care</h3>
+            <br>
+            <h4>Calgary, AB</h4>
+            <h4>(October 2024 – Present)</h4>
+            <p>• Designed and developed a responsive website using HTML, CSS, and JavaScript to enhance user experience.</p>
+            <p>• Collaborated with stakeholders to refine project requirements and deliver optimal solutions.</p>
+            <p>• Managed code and updates through GitHub, ensuring maintainable and organized development.</p>
+            <p>• Troubleshot and resolved technical issues, ensuring seamless website functionality and user satisfaction.</p>
+        </div>
+
+        <hr class="job-separator">
+        <br><br>
+
+        <div class="job">
+            <h3>Sales Associate</h3>
+            <br>
+            <h3>Staples</h3>
+            <br>
+            <h4>Cochrane, AB</h4>
+            <h4>(August 2021 – Present)</h4>
+            <p>• Assisted customers with technical troubleshooting, product setup, and print services, providing clear solutions and product guidance.</p>
+            <p>• Delivered exceptional customer service by addressing inquiries and resolving issues promptly.</p>
+            <p>• Assisted in product selection, enhancing customer satisfaction, and driving sales conversions.</p>
+            <p>• Maintained accurate inventory levels through regular stock checks and replenishment processes.</p>
+            <p>• Trained new associates on sales techniques and store procedures to ensure seamless operations.</p>
+        </div>
+
+        <hr class="job-separator">
+        <br><br>
+
+        <div class="job">
+            <h3>Freelance Web Developer / Web Designer</h3>
+            <br>
+            <h3>Hivefficient</h3>
+            <br>
+            <h5>(Project completed May 2025)</h5>
+            <br>
+            <h4>Calgary, AB</h4>
+            <h4>(August 2024 – May 2025)</h4>
+            <p>• Developed responsive web applications using HTML, CSS, and JavaScript to enhance user experience.</p>
+            <p>• Conducted regular website performance tests, identifying areas for improvement in speed and accessibility.</p>
+            <p>• Participated in code reviews, providing feedback to maintain high-quality coding standards within team projects.</p>
+        </div>
+        <hr class="job-separator">
+        <br><br>
+
+        <!-- Certifications -->
+        <h2>Certifications</h2>
+        <br><br>
+
+        <div class="job">
+            <h3>The Complete Full-Stack Web Development Bootcamp - Udemy (In Progress, 2026)</h3>
+            <br>
+            <p>• Completed 16+ full-stack projects using HTML, CSS, JavaScript, Node.js, React, and PostgreSQL.</p>
+            <p>• Gained experience building real-world applications with modern development practices.</p>
+            <p>• Strengthened both frontend and backend development skills.</p>
+        </div>
+
+    </div>
+</section>
+
+        <section id="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <p>
+            I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
+            Feel free to reach out directly via email.
+        </p>
+        
+        <div class="contact-wrapper">
+            <a href="mailto:rafaelji1306@gmail.com?subject=Inquiry%20from%20Portfolio" class="email-button">
+                Send Email
+            </a>
+
+            <div class="contact-details">
+                <span class="detail-label">Email Address</span>
+                <span class="detail-value">rafaelji1306@gmail.com</span>
+            </div>
+
+            <div class="contact-details">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Calgary, AB</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="top-container">
+    <a href="#home" class="simple-top-btn">Back to Top ↑</a>
+</div>
+
+    </main>
+
+    <footer>
+        © 2026 Rafael Jiménez. All rights reserved.
+    </footer>
+
+
+</body>
+</html>
