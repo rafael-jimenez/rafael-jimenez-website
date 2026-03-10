@@ -516,3 +516,20 @@ header {
 main {
     padding-top: 85px; /* This matches your header height exactly */
 }
+
+/* This stops links inside buttons from turning blue or purple */
+.button-container a {
+    text-decoration: none;
+    color: inherit; /* This makes the link take the color of the button text */
+    display: inline-block; /* Makes the whole button area clickable */
+}
+
+/* Specifically targeting the text inside your buttons */
+.button_top {
+    color: #303d47; /* Forces your dark grey/blue color */
+}
+
+/* Optional: If you want them to stay the same color even after being clicked */
+.button-container a:visited {
+    color: #303d47;
+}
